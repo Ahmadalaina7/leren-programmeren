@@ -15,7 +15,9 @@ if geel == "nee":
         korst1 = input("heeft de kaas een korst? (ja/nee) ")
 
         if korst1 == "ja":
-            print("Camembert")
+            ## als de kaas stinkt dan is het camembert
+            print("Camembert") 
+            
 
         else:
             print("Mozzarella")

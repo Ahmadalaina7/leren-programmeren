@@ -39,21 +39,17 @@ if Rijbewijs in ("Ja", "ja", "j"):
 geslacht = input('bent uw man of vrouw ? ')
 if geslacht in ("Man", "man"):
     snor = int(input('Hoe groot is uw snor ? '))
-    if snor > 10:
+    if snor >= 10:
         score = score + 1
-    else:
-        snor == 10
-        score = score + 1
+    
 
 
 else:
     geslacht in ("vrouw", "Vrouw")
     krulhaar = int(input('Hoelang is uw haar ? '))
-    if krulhaar > 20:
+    if krulhaar >= 20:
         score = score + 1
-    else:
-        krulhaar == 20
-        score = score + 1
+   
 
 
 lang = int(input('Hoe lang bent uw ? '))
