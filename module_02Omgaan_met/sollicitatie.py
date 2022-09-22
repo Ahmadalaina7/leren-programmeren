@@ -40,7 +40,8 @@ geslacht = input('bent uw man of vrouw ? ')
 if geslacht in ("Man", "man"):
     snor = int(input('Hoe groot is uw snor ? '))
     if snor >= 10:
-        score = score + 1
+        raise NameError("Paupertje")
+    score = score + 1
     
 
 
@@ -48,12 +49,13 @@ else:
     geslacht in ("vrouw", "Vrouw")
     krulhaar = int(input('Hoelang is uw haar ? '))
     if krulhaar >= 20:
-        score = score + 1
+            raise NameError(" lange haar heeft uw wow zeg ")
+    score = score + 1
    
 
 
 lang = int(input('Hoe lang bent uw ? '))
-if lang > 150:
+if lang > 150:   
     score = score + 1
 
 else:
@@ -63,6 +65,8 @@ else:
 
 zwaar = int(input('Hoe zwaar bent uw ? '))
 if zwaar < 90:
+    raise NameError(" je mag wel sporten ")
+    
     score = score + 1
 else:
  zwaar == 90
