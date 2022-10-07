@@ -14,11 +14,11 @@ robotArm.grab()
 for count in range (0,5):
     robotArm.moveRight()
 robotArm.drop()
-robotArm.moveLeft()
-robotArm.moveLeft()
+for count in range (2):
+    robotArm.moveLeft()
 robotArm.grab()
-robotArm.moveRight()
-robotArm.moveRight()
+for count in range (2):
+    robotArm.moveRight()
 robotArm.drop()
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()
