@@ -7,6 +7,21 @@ for i in range(6):
     robotArm.grab()
     robotArm.moveLeft()
     robotArm.drop()
-for 
+for count in range(3):
+    robotArm.moveRight()
+for i in range(6):
+    robotArm.grab()
+    robotArm.moveLeft()
+    robotArm.drop()
+    robotArm.moveRight()
+for i in range(3):
+        for count in range(2):
+            robotArm.moveRight()
+        for i in range(6):
+            robotArm.grab()
+            robotArm.moveLeft()
+            robotArm.drop()
+            robotArm.moveRight()
+      
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()
