@@ -1,12 +1,11 @@
 import random
 
-poging = 0
-ronde = 0
-score = 0
+
+
 AANTAL_RONDES = 20
 AANTAL_POGINGEN = 10
-
-
+ronde = 0
+score = 0
 while ronde < AANTAL_RONDES:
     raden = input("Wil je een getal raden?: ").lower()
 
@@ -15,8 +14,9 @@ while ronde < AANTAL_RONDES:
         print(f"Jou eind score is {score} van de {AANTAL_RONDES} punten!")
         exit()
 
-    num = random.randint(1, 1000)
-    print(num)  # dit is om te het testen van de programma makkelijker te maken
+    geheimgetal = random.randint(1, 1000)
+    print(geheimgetal)  # dit is om te het testen van de programma makkelijker te maken
+    poging = 0
     while poging < AANTAL_POGINGEN:  # loop van het getal raden stopt na 10 pogingen
         while True:
             try:  # verplicten van cijfers
@@ -25,12 +25,12 @@ while ronde < AANTAL_RONDES:
             except ValueError:
                 print("Cijfers alleen AUB!")
 
-        if antwoord == num:
+        if antwoord == geheimgetal:
             print("Je hebt het goed geraden!")
             score += 1
             break
         else:  # abs gebruiken
-            verschil = abs(antwoord - num)
+            verschil = abs(antwoord - geheimgetal)
             if verschil <= 20:  # berekent hier of het heel warm is of warm
                 print("Je bent heel warm!")
             elif verschil <= 50 and verschil >= 20:
@@ -39,7 +39,7 @@ while ronde < AANTAL_RONDES:
 
     print(f"Je hebt {score} punt(en)!")
     ronde += 1
-    poging = 0
+   
 
 
 print(f"Jou eind score is {score} van de {AANTAL_RONDES} punten!")
