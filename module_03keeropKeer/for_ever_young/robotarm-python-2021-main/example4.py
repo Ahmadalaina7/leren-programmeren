@@ -1,6 +1,4 @@
-from shutil import move
 from RobotArm import RobotArm
-
 robotArm = RobotArm('exercise 4')
 robotArm.speed = 1
 # Jouw python instructies zet je vanaf hier:
