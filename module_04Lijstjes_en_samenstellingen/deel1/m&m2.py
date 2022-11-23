@@ -2,9 +2,7 @@ import random
 kleurLijst = ["rood", "blauw", "groen", "geel", "bruin"]
 
 hoeveel = int(input("Hoeveel M&M's moeten er gevoegd worden: "))
-zak = {
-
-}
+zak = {}
 getal = 1
 for k in range(hoeveel):
     kleur = random.choice(kleurLijst)

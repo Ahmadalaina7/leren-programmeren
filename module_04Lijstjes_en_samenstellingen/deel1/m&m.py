@@ -1,11 +1,9 @@
 import random
-kleur = ("oranje", "blauw", "groen", "bruin")
+kleuren = ("oranje", "blauw", "groen", "bruin")
 
-(oranje, blauw, groen, bruin) = kleur
+aantal = int(input("Hoeveel M&M's moeten in de zak? "))
 
-vraag = int(input("Hoeveel M&M's moeten in de zak? "))
-
-set = (random.choices(kleur, k = vraag))
+set = (random.choices(kleuren, k = aantal))
 
 print("in de zak met M&M's zit: ")
 print(set)
