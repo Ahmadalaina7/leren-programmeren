@@ -1,7 +1,4 @@
 import random
-
-
-
 AANTAL_RONDES = 20
 AANTAL_POGINGEN = 10
 ronde = 0

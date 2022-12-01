@@ -10,6 +10,5 @@ for s in range(1, 5):
     robotArm.drop()
     for move in range(5 - int(box == s - 1)):
       robotArm.moveLeft()
-
 # Na jouw code wachten tot het sluiten van de window:
 robotArm.wait()
