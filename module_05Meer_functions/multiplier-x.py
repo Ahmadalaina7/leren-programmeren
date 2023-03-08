@@ -4,3 +4,4 @@ def multiplication_table(n):
 
 num = input("Van welk getal wilt u de tafel zien? ")
 multiplication_table(int(num))
+multiplication_table(13)
