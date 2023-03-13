@@ -82,79 +82,115 @@ def getAdventuringFriends(friends: list) -> list:
 def getNumberOfHorsesNeeded(people: int) -> int:
     return math.ceil(people / 2)
 
+
 def getNumberOfTentsNeeded(people: int) -> int:
     return math.ceil(people / 3)
 
-def getTotalRentalCost(horses: int, tents:int) -> float:
+
+def getTotalRentalCost(horses: int, tents: int) -> float:
     return horses * silver2gold(COST_HORSE_SILVER_PER_DAY) * JOURNEY_IN_DAYS + tents * COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS / 7)
 
 ##################### M04.D02.O7 #####################
 
-def getItemsAsText(items: list) -> str:
-    pass
 
-def getItemsValueInGold(items: list) -> float:
-    pass
+def getItemsAsText(items:list) -> str:
+  item_text = []
+  for item in items:
+    item_text.append("{amount}{unit} {name}".format(amount=item["amount"], name=item["name"], unit=item["unit"]))
+
+  return ", ".join(item_text)
+
+def getItemsValueInGold(items:list) -> float:
+    lijst = []
+    for item in items:
+        if item['price']['type'] == 'copper':
+            copper = item['amount'] * item['price']['amount']
+            lijst.append(copper2gold(copper))
+        elif item['price']['type'] == 'silver':
+            silver = item['amount'] * item['price']['amount']
+            lijst.append(silver2gold(silver))
+        elif item['price']['type'] == 'platinum':
+            platinum = item['amount'] * item['price']['amount']
+            lijst.append(platinum2gold(platinum))
+        else:
+            goud = item['amount'] * item['price']['amount']
+            lijst.append(goud)
+    return sum(lijst)
 
 ##################### M04.D02.O8 #####################
+
 
 def getCashInGoldFromPeople(people: list) -> float:
     pass
 
 ##################### M04.D02.O9 #####################
 
+
 def getInterestingInvestors(investors: list) -> list:
     pass
+
 
 def getAdventuringInvestors(investors: list) -> list:
     pass
 
-def getTotalInvestorsCosts(investors: list, gear:list) -> float:
+
+def getTotalInvestorsCosts(investors: list, gear: list) -> float:
     pass
 
 ##################### M04.D02.O10 #####################
 
-def getMaxAmountOfNightsInInn(leftoverGold: float, people:int, horses:int) -> int:
+
+def getMaxAmountOfNightsInInn(leftoverGold: float, people: int, horses: int) -> int:
     pass
 
-def getJourneyInnCostsInGold(nightsInInn: int, people:int, horses:int) -> float:
+
+def getJourneyInnCostsInGold(nightsInInn: int, people: int, horses: int) -> float:
     pass
 
 ##################### M04.D02.O12 #####################
 
-def getInvestorsCuts(profitGold: float, investors:list) -> list:
+
+def getInvestorsCuts(profitGold: float, investors: list) -> list:
     pass
 
-def getAdventurerCut(profitGold: float, investorsCuts:list, fellowship:list) -> float:
+
+def getAdventurerCut(profitGold: float, investorsCuts: list, fellowship: list) -> float:
     pass
 
 ##################### M04.D02.O13 #####################
 
-def getEarnigs(profitGold: float, mainCharacter:dict, friends:list, investors:list) -> list:
+
+def getEarnigs(profitGold: float, mainCharacter: dict, friends: list, investors: list) -> list:
     pass
 
+
 def colored(text: str, color: any, attrs):
-    print(text)
+    return text
 
 
 ##################### view functions #####################
-def print_colorvars(txt: str='{}', vars:list=[], color:str='yellow') -> None:
-    vars = map(lambda string, color=color: colored(str(string), color, attrs=['bold']) , vars)
+def print_colorvars(txt: str = '{}', vars: list = [], color: str = 'yellow') -> None:
+    vars = map(lambda string, color=color: colored(
+        str(string), color, attrs=['bold']), vars)
     print(txt.format(*vars))
+
 
 def print_title(name: str) -> None:
     print_colorvars(vars=['=== [ {} ] ==='.format(name)], color='green')
 
-def print_chapter(number: int, name:str) -> None:
+
+def print_chapter(number: int, name: str) -> None:
     nextStep(2)
     print_colorvars(
         vars=['- CHAPTER {}: {} -'.format(number, name)], color='magenta')
 
-def nextStep(secwait: int=1) -> None:
+
+def nextStep(secwait: int = 1) -> None:
     print('')
     time.sleep(secwait)
 
-def ifOne(amount: int, yes:str, no:str, single='een') -> str:
+
+def ifOne(amount: int, yes: str, no: str, single='een') -> str:
     text = yes if amount == 1 else no
     amount = single if amount == 1 else amount
     return '{} {}'.format(amount, text).lstrip()
