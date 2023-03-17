@@ -141,24 +141,20 @@ def getInterestingInvestors(investors: list) -> list:
 
 
 def getAdventuringInvestors(investors: list) -> list:
-    lijst_adventuring = []
-    for investor in getInterestingInvestors(investors):
-        if investor['adventuring']:
-            lijst_adventuring.append(investor)
-    return lijst_adventuring
+    
+    investors = getInterestingInvestors(investors)
+    return getFromListByKeyIs(investors,'adventuring', True)
 
 
 def getTotalInvestorsCosts(investors: list, gear: list) -> float:
-    totalCosts = 0
-
-    adventuringInvestors = getAdventuringInvestors(investors)
-
-    for investor in adventuringInvestors:
-        totalCosts += getItemsValueInGold(gear)
-    investorJourneyCosts = getJourneyFoodCostsInGold(len(adventuringInvestors), len(adventuringInvestors))
-    investorRentalCosts = getTotalRentalCost(len(adventuringInvestors), len(adventuringInvestors))
-    totalCosts += investorJourneyCosts + investorRentalCosts
-    return totalCosts
+    totalCost = 0
+    investor = getAdventuringInvestors(investors)
+    for x in range(len(investor)):
+        totalCost += getItemsValueInGold(gear)
+        
+    totalCost += getJourneyFoodCostsInGold(len(investor),len(investor))
+    totalCost += getTotalRentalCost(len(investor), len(investor))
+    return totalCost
 
 ##################### M04.D02.O10 #####################
 
