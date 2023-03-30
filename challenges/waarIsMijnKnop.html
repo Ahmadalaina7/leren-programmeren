@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="waarIsMijnKnop.css">
+</head>
+<body>
+  <h1 id = "myHeading">Welkom</h1>  
+  <button id="myButton" onclick="handleClick()">Klik hier</button>
+
+  <script>
+    let clickCount = 0;
+
+function handleClick() {
+
+  clickCount++;
+  if (clickCount == 1) {
+    document.getElementById("myHeading").textContent = "Welkom Ahmad Alaina";
+  }
+  
+  if (clickCount == 2) {
+    document.getElementById("myButton").style.display = "none";
+  }
+  
+}   
+
+    </script>
+</body>
+</html>

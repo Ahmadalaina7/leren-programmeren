@@ -1,0 +1,17 @@
+@font-face {
+    font-family: test1;
+    src: url(Top\ Secret\ Stamp.ttf);
+}
+button{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    color: aliceblue;
+    font-family: test1;
+    
+}
+button:hover {
+    background-color: red; /* rood */
+    color: white;
+    text-decoration: underline;
+  }
