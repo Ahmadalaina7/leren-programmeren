@@ -1,0 +1,34 @@
+laat welkom zin laten zien
+
+
+zolang waar 
+    zolang waar
+        vraag aantal bolletjes
+        als bolletjes 1 t/m 8?
+            break
+        als bolletjes meer dan 8
+            laat zien sorry zo grote baken hebben we niet
+        anders 
+            laat zien sorry ik snap het niet
+
+    als bolletjes van 1 t/m 3
+        zolang waar
+            vraag hoorntje of een bakje
+            als hoorntje of bakje
+               stop
+            anders 
+                ik snap het niet
+        laat zien aantal bolletjes met bakje of hoorntje
+    als bolletjes van 4 t/m 8
+        laat zien aantal bolletjes met bakje
+    
+    zolang waar
+        vraag meer bestelen?
+        als ja 
+            ga terug naar begin
+        als nee
+            stop
+        anders
+            ik snap het niet
+        
+
