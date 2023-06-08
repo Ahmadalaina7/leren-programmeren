@@ -1,0 +1,17 @@
+.evening{
+  background-image: url("evening.png");
+}
+.afternoon{
+  background-image: url("afternoon.png");
+}
+.morning{
+  background-image: url("morning.png");
+}
+.night{
+  background-image: url("night.png");
+}
+
+body {
+  background-size: 100%;
+  text-align: center;
+}
