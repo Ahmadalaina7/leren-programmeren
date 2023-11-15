@@ -130,8 +130,10 @@ def maak_een_bon(aantal_bolletjes, aantal_bakjes, aantal_hoorntjes, smaken_telle
 
     print("-------- BON --------")
     # print(f"Aantal bolletjes: {aantal_bolletjes} x €{prijs_per_bolletje:.2f} = €{totale_prijs_bolletjes:.2f}")
-    print(f"Hoorntjes: {aantal_hoorntjes} x €{prijs_per_hoorntje:.2f} = €{totale_prijs_hoorntjes:.2f}")
-    print(f"Bakjes: {aantal_bakjes} x €{prijs_per_bakje:.2f} = €{totale_prijs_bakjes:.2f}")
+    if aantal_hoorntjes > 0:
+        print(f"Hoorntjes: {aantal_hoorntjes} x €{prijs_per_hoorntje:.2f} = €{totale_prijs_hoorntjes:.2f}")
+    if aantal_bakjes > 0:
+        print(f"Bakjes: {aantal_bakjes} x €{prijs_per_bakje:.2f} = €{totale_prijs_bakjes:.2f}")
     
     for smaak in smaken_teller:
         print(f"{smaak}: {smaken_teller[smaak]} x €{prijs_per_bolletje:.2f} = €{smaken_teller[smaak] * prijs_per_bolletje:.2f}")

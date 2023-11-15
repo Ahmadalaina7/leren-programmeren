@@ -1,0 +1,30 @@
+/* styles.css */
+
+/* Algemene stijlen voor het formulier */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* Stijlen voor formulierelementen */
+input{
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: #af4c4c;
+}
+input[type="submit"] {
+    background-color: #4c74af; /* Groene kleur (pas aan naar wens) */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Optioneel: Stijl wanneer de knop wordt ingedrukt */
+input[type="submit"]:active {
+    background-color: #45a049; /* Donkerdere groene kleur */
+}
