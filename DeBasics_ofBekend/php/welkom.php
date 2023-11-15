@@ -12,16 +12,16 @@
 <body>
     <h1>"De ingevulde gegevens zijn:"</h1>
     <?php
-    $naam = $_GET['naam'];
+    $naam = $_POST['naam'];
     echo "Naam: " . $naam;
     echo "<br>";
-    $number = $_GET['number'];
+    $number = $_POST['number'];
     echo "Age: " . $number;
     echo "<br>";
-    $email = $_GET['email'];
+    $email = $_POST['email'];
     echo "Email: " . $email;
     echo "<br>";
-    $password = $_GET['password'];
+    $password = $_POST['password'];
     echo "Password: " . $password;
 
 
