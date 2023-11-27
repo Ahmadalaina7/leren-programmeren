@@ -91,54 +91,54 @@ def vraag_topping(hoorntje_of_bakje, topping_teller , aantal_bolletjes):
 
 
 def maak_een_bon(aantal_bolletjes, aantal_bakjes, aantal_hoorntjes, smaken_teller, topping_teller):
-    prijs_per_bolletje = 1.10
-    prijs_per_hoorntje = 1.25
-    prijs_per_bakje = 0.75
-    prijs_Topping_Slagroom = 0.50
-    prijs_Topping_Sprinkels = 0.30
-    prijs_Topping_caramelSaus_Bakje = 0.90
-    prijs_Topping_caramelSaus_hoorntje = 0.60
-    geen_topping = 0.00
-    totaal_topping = 0
+    PRIJS_PER_BOLLETJE = 1.10
+    PRIJS_PER_HOORNTJE = 1.25
+    PRIJS_PER_BAKJE = 0.75
+    PRIJS_TOPPING_SLAGROOM = 0.50
+    PRIJS_TOPPING_SPRINKELS = 0.30
+    PRIJS_TOPPING_CARAMELSAUS_BAKJE = 0.90
+    PRIJS_TOPPING_CARAMELSAUS_HOORNTJE = 0.60
+    GEEN_TOPPING = 0.00
+    TOTAAL_TOPPING = 0
     # bereken totaal caramel in een bakje
     if "Caramel saus bakje" in topping_teller:
-        totaal_caramel_bakje = prijs_Topping_caramelSaus_Bakje * topping_teller["Caramel saus bakje"]
-        totaal_topping += totaal_caramel_bakje
+        totaal_caramel_bakje = PRIJS_TOPPING_CARAMELSAUS_BAKJE * topping_teller["Caramel saus bakje"]
+        TOTAAL_TOPPING += totaal_caramel_bakje
     #bereken totaal caramel in een hoorntje
     if "Caramel saus hoorntje" in topping_teller:
-        totale_caramel_hoorntje = prijs_Topping_caramelSaus_hoorntje * topping_teller["Caramel saus hoorntje"]
-        totaal_topping += totale_caramel_hoorntje
+        totale_caramel_hoorntje = PRIJS_TOPPING_CARAMELSAUS_HOORNTJE * topping_teller["Caramel saus hoorntje"]
+        TOTAAL_TOPPING += totale_caramel_hoorntje
     #bereken totaal slagroom
     if "Slagroom" in topping_teller:
-        totaal_slagroom = prijs_Topping_Slagroom * topping_teller["Slagroom"]
-        totaal_topping += totaal_slagroom
+        totaal_slagroom = PRIJS_TOPPING_SLAGROOM * topping_teller["Slagroom"]
+        TOTAAL_TOPPING += totaal_slagroom
     #bereken totaal Sprinkel
     if "Sprinkels" in topping_teller:
-        totaal_sprinkels = prijs_Topping_Sprinkels * topping_teller["Sprinkels"]
-        totaal_topping += totaal_sprinkels
+        totaal_sprinkels = PRIJS_TOPPING_SPRINKELS * topping_teller["Sprinkels"]
+        TOTAAL_TOPPING += totaal_sprinkels
     #geen topping is geen extra kosten
     # if "Geen" in topping_teller:
     #     geen_gekozen_topping = geen_topping * topping_teller["Geen"]
     #     totaal_topping += geen_gekozen_topping
 
 
-    totale_prijs_hoorntjes = aantal_hoorntjes * prijs_per_hoorntje
-    totale_prijs_bakjes = aantal_bakjes * prijs_per_bakje
-    totale_prijs_bolletjes = aantal_bolletjes * prijs_per_bolletje
+    totale_prijs_hoorntjes = aantal_hoorntjes * PRIJS_PER_HOORNTJE
+    totale_prijs_bakjes = aantal_bakjes * PRIJS_PER_BAKJE
+    totale_prijs_bolletjes = aantal_bolletjes * PRIJS_PER_BOLLETJE
 
-    totale_prijs = totale_prijs_hoorntjes + totale_prijs_bakjes + totale_prijs_bolletjes + totaal_topping
+    totale_prijs = totale_prijs_hoorntjes + totale_prijs_bakjes + totale_prijs_bolletjes + TOTAAL_TOPPING
 
     print("-------- BON --------")
     # print(f"Aantal bolletjes: {aantal_bolletjes} x €{prijs_per_bolletje:.2f} = €{totale_prijs_bolletjes:.2f}")
     if aantal_hoorntjes > 0:
-        print(f"Hoorntjes: {aantal_hoorntjes} x €{prijs_per_hoorntje:.2f} = €{totale_prijs_hoorntjes:.2f}")
+        print(f"Hoorntjes: {aantal_hoorntjes} x €{PRIJS_PER_HOORNTJE:.2f} = €{totale_prijs_hoorntjes:.2f}")
     if aantal_bakjes > 0:
-        print(f"Bakjes: {aantal_bakjes} x €{prijs_per_bakje:.2f} = €{totale_prijs_bakjes:.2f}")
+        print(f"Bakjes: {aantal_bakjes} x €{PRIJS_PER_BAKJE:.2f} = €{totale_prijs_bakjes:.2f}")
     
     for smaak in smaken_teller:
-        print(f"{smaak}: {smaken_teller[smaak]} x €{prijs_per_bolletje:.2f} = €{smaken_teller[smaak] * prijs_per_bolletje:.2f}")
-    if totaal_topping > 0.00 :
-        print(f"Topping:  €{totaal_topping:.2f}" )
+        print(f"{smaak}: {smaken_teller[smaak]} x €{PRIJS_PER_BOLLETJE:.2f} = €{smaken_teller[smaak] * PRIJS_PER_BOLLETJE:.2f}")
+    if TOTAAL_TOPPING > 0.00 :
+        print(f"Topping:  €{TOTAAL_TOPPING:.2f}" )
 
     print("---------------------+")
     print(f"Totale prijs: €{totale_prijs:.2f}")
